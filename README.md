@@ -1,13 +1,6 @@
 # escape_room_project
 How to choose the best escape room in Edinburgh!
 
----
-title: "Escape room Edinburgh project report"
-author: "MSFOSS"
-date: "22/03/2019"
-output:  github_document
----
-
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 require(tidyverse)
