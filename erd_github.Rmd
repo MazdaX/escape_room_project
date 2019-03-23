@@ -2,14 +2,7 @@
 title: "Escape room Edinburgh project report"
 author: "MSFOSS"
 date: "22/03/2019"
-output:
-  html_document:
-    keep_md: true
-    code_folding: hide
-    toc: true
-    toc_float:
-      collapsed: true
-      smooth_scroll: false
+output:  github_document
 ---
 
 ```{r setup, include=FALSE}
@@ -31,7 +24,7 @@ The metadat was collected from escape rooms reviews on TripAdvisor as following:
 
 # The dataframe
 
-```{r }
+```{r,cache=TRUE}
 erd<-read.csv(file = "/mnt/e/escape_room_edinburgh.csv",header = TRUE,stringsAsFactors = FALSE)
 erd$Venue<-as.factor(erd$Venue)
 erd$Game<-as.factor(erd$Game)
@@ -45,10 +38,11 @@ datatable(data = erd %>% arrange(desc(revs_tripadvisor)),
                            scrollX = TRUE))
 ```
 
+
 # Priciple component analysis:
 
 
-```{r, fig.align="center"}
+```{r, fig.align="center",cache=TRUE}
 #PCA prep
 erd_scaled<-scale(x = erd[-c(1:2,10)],center = TRUE,scale = TRUE)
 erd_ready<-cbind.data.frame(erd[1:2],erd_scaled)
